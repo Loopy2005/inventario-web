@@ -1,0 +1,24 @@
+# Autodetectar archivos de texto y normalizarlos a LF en el repositorio.
+# Git intentará convertir a CRLF en el checkout en Windows si core.autocrlf=true
+# * text=auto
+
+# --- O MEJOR: Ser más explícito para asegurar LF en el repo ---
+# Forzar que los archivos de texto más comunes usen LF en el repositorio.
+# Git todavía puede convertirlos a CRLF en el checkout en Windows si core.autocrlf=true
+* text=auto eol=lf
+*.js    text eol=lf
+*.jsx   text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.viteconfig* text eol=lf # Añadido para tu vite.config.js
+
+# Si tuvieras archivos que NECESITAN CRLF (ej: scripts .bat de Windows)
+# *.bat   text eol=crlf
+
+# Archivos que Git no debe tocar (binarios)
+# *.png   binary
+# *.jpg   binary
